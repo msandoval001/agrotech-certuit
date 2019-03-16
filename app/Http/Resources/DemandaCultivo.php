@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Cultivo;
 use App\User;
+use App\Oferta;
 
 class DemandaCultivo extends JsonResource
 {
@@ -21,7 +22,7 @@ class DemandaCultivo extends JsonResource
              'id_comprador' => User::find($this->id_comprador),
              'id_cultivo' => Cultivo::find($this->id_cultivo),
              'cantidad' => $this->cantidad,
-             'id_oferta' => url("api/v1/ofertas?id={$this->id_oferta}"),
+             'id_oferta' => Oferta::find($this->id_oferta),
          ];
     }
 }

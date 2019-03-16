@@ -43,7 +43,7 @@ class OfertaController extends Controller
         ]);
         return response()->json([
             'message' => 'Oferta registrada exitosamente',
-            'link' => url('/api/v1/oferta/' . $user->id),
+            'link' => url('/api/v1/ofertas/' . $user->id),
         ]);
     }
 }

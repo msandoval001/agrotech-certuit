@@ -28,3 +28,7 @@ Route::post('api/v1/productos','ProductoController@register');
 Route::get('api/v1/demandas','DemandaCultivoController@listarCultivos');
 Route::get('api/v1/demandas/{id}','DemandaCultivoController@consultarUsuario');
 Route::post('api/v1/demandas','DemandaCultivoController@register');
+
+Route::get('api/v1/ofertas','OfertaController@listarCultivos');
+Route::get('api/v1/ofertas/{id}','OfertaController@consultarUsuario');
+Route::post('api/v1/ofertas','OfertaController@register');

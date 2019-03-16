@@ -28,12 +28,12 @@ class DemandaCultivoController extends Controller
 
     public function register(Request $request)
     {
-        $rules = array ([
-            'nombre' => 'required|max:255'
-        ]);
 
         $user = DemandaCultivo::create([
-            'nombre' => $request['nombre']
+            'id_comprador' => $request['id_comprador'],
+            'id_cultivo' => $request['id_cultivo'],
+            'id_oferta' => $request['id_oferta'],
+            'cantidad' => $request['cantidad']
         ]);
         return response()->json([
             'message' => 'Demanda de cultivo registrada exitosamente',

@@ -15,6 +15,10 @@ class CreateDemandaCultivosTable extends Migration
     {
         Schema::create('demanda_cultivos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('id_comprador');
+            $table->integer("id_cultivo");
+            $table->integer("cantidad");
+            $table->integer("id_oferta");
             $table->timestamps();
         });
     }
