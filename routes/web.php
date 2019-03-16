@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('api/v1/users','UserController@listarUsuarios');
+Route::get('api/v1/users/{user}','UserController@consultarUsuario');
+Route::post('api/v1/users','UserController@register');
