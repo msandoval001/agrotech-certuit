@@ -35,6 +35,10 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'productor' => 'required',
+            'comprador' => 'required',
+            'distribuidor' => 'required'
+
 
         ]);
 
@@ -42,10 +46,14 @@ class UserController extends Controller
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'password' =>  bcrypt($request['password']),
+                'productor' => $request['productor'],
+                'comprador' => $request['comprador'],
+                'distribuidor' => $request['distribuidor']
+
             ]);
             return response()->json([
                 'message' => 'Usuario registrado exitosamente',
-                'link'=> url('/api/users/'.$user->id),
+                'link'=> url('/api/v1/users/'.$user->id),
             ]);
     }
 }

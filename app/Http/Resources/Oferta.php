@@ -3,8 +3,11 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Producto;
+use App\User;
 
-class User extends JsonResource
+
+class Oferta extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,14 +17,11 @@ class User extends JsonResource
      */
     public function toArray($request)
     {
-        return [
+        return[
             'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
-            'distribuidor' => $this->distribuidor,
-            'comprador' => $this->comprador,
-            'productor' => $this->productor
-            //'self' => url("/api/users/{$this->id}"),
+            'vendedor' => User::find($this->id_vendedor),
+            'comprador' => User::find($this->id_comprador),
+            'producto' =>  Producto::find($this->id_producto),
         ];
     }
 }

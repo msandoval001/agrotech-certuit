@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class User extends JsonResource
+class Cultivo extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +16,7 @@ class User extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
-            'distribuidor' => $this->distribuidor,
-            'comprador' => $this->comprador,
-            'productor' => $this->productor
-            //'self' => url("/api/users/{$this->id}"),
+            'nombre' => $this->nombre
         ];
     }
 }
